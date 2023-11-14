@@ -1,5 +1,6 @@
 ﻿using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,7 +45,7 @@ namespace DataAccess.Concrete.InMemory
 
             Product productToDelete = _products.SingleOrDefault(p => p.ProductId == product.ProductId);
 
-            _products.Remove(product);
+            _products.Remove(productToDelete);
         }
         public void Update(Product product)
         {
@@ -71,6 +72,11 @@ namespace DataAccess.Concrete.InMemory
         }
 
         public Product Get(Expression<Func<Product, bool>> filter)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<ProductDetailDto> GetProductDetails()
         {
             throw new NotImplementedException();
         }

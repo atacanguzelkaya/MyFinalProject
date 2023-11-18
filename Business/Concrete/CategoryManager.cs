@@ -11,21 +11,21 @@ namespace Business.Concrete
 {
     public class CategoryManager : ICategoryService
     {
-        ICategoryDal _categorydal;
+        ICategoryDal _categoryDal;
 
         public CategoryManager(ICategoryDal categorydal)
         {
-            _categorydal = categorydal;
+            _categoryDal = categorydal;
         }
 
         public List<Category> GetAll()
         {
-            return _categorydal.GetAll();
+            return _categoryDal.GetAll();
         }
         //Select * from Categories where categoryId = 3
         public List<Category> GetAllById(int categoryId)
         {
-            return _categorydal.GetAll(c=>c.CategoryId == categoryId);
+            return _categoryDal.GetAll(c=>c.CategoryId == categoryId);
         }
     }
 }
